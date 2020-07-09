@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="current-time"></div>
+</body>
+<script>
+    function CurrentTime() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        month = month < 10 ? ("0" + month) : month;
+        day = day < 10 ? ("0" + day) : day;
+        hour = hour < 10 ? ("0" + hour) : hour;
+        minute = minute < 10 ? ("0" + minute) : minute;
+        second = second < 10 ? ("0" + second) : second;
+        var Timer = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+        //在页面上插入日期
+        document.getElementById("time").value = Timer;
+        setTimeout(function () {
+            CurrentTime();
+        }, 10);
+    }
+</script>
+</html>
